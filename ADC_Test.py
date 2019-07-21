@@ -1,6 +1,7 @@
 #Setup
 import board
 import busio
+from time import sleep
 i2c = busio.I2C(board.SCL, board.SDA)
 import adafruit_ads1x15.ads1115 as ADS
 from adafruit_ads1x15.analog_in import AnalogIn
@@ -13,4 +14,15 @@ chan2 = AnalogIn(ads, ADS.P2)
 chan3 = AnalogIn(ads, ADS.P3)
 
 while True:
-	print("{0:2.2} - {0:2.2} - {0:2.2} - {0:2.2}".format(chan0.voltage, chan1.voltage, chan2.voltage, chan3.voltage))
+	print("{0:2.2} - {0:2.2} - {0:2.2} - {0:2.2}".format(read_vals()))
+
+def read_vals():
+	a = chan0.voltage
+	time.sleep(0.01)
+	b = chan1.voltage
+	time.sleep(0.01)
+	c = chan2.voltage
+	time.sleep(0.01)
+	d = chan3.voltage
+	time.sleep(0.01)
+	return a,b,c,d
