@@ -7,8 +7,6 @@ import adafruit_ads1x15.ads1115 as ADS
 from adafruit_ads1x15.analog_in import AnalogIn
 
 ads = ADS.ADS1115(i2c)
-ads.overRideConversionDelay(65);
-
 
 chan0 = AnalogIn(ads, ADS.P0)
 chan1 = AnalogIn(ads, ADS.P1)
