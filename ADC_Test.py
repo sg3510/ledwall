@@ -13,4 +13,4 @@ chan2 = AnalogIn(ads, ADS.P2)
 chan3 = AnalogIn(ads, ADS.P3)
 
 while True:
-	print("{:2.2%} - {:2.2%} - {:2.2%} - {:2.2%}".format(chan0.voltage, chan1.voltage, chan2.voltage, chan3.voltage))
+	print("{0:2.2} - {0:2.2} - {0:2.2} - {0:2.2}".format(chan0.voltage, chan1.voltage, chan2.voltage, chan3.voltage))
