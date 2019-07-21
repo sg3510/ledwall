@@ -13,9 +13,6 @@ chan1 = AnalogIn(ads, ADS.P1)
 chan2 = AnalogIn(ads, ADS.P2)
 chan3 = AnalogIn(ads, ADS.P3)
 
-while True:
-	print("{0:2.2} - {0:2.2} - {0:2.2} - {0:2.2}".format(read_vals()))
-
 def read_vals():
 	a = chan0.voltage
 	time.sleep(0.01)
@@ -26,3 +23,6 @@ def read_vals():
 	d = chan3.voltage
 	time.sleep(0.01)
 	return a,b,c,d
+
+while True:
+	print("{0:2.2} - {0:2.2} - {0:2.2} - {0:2.2}".format(read_vals()))
