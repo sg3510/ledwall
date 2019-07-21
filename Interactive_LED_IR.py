@@ -86,8 +86,8 @@ def rainbow_cycle(wait):
           pixel_index = (i * 256 // num_pixels) + j
           pixels[i] = wheel(pixel_index & 255)
       a = a*0.9 + 0.1*chan0.voltage
-      b = b*0.9 + 0.1*chan1.voltage
-      c = c*0.9 + 0.1*chan2.voltage
+      b = b*0.9 + 0.1*chan2.voltage
+      c = c*0.9 + 0.1*chan1.voltage
       d = d*0.9 + 0.1*chan3.voltage
       assign_quad0(min(int(a/3.0*255),255))
       assign_quad1(min(int(b/3.0*255),255))
