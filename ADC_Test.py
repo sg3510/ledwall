@@ -11,4 +11,6 @@ chan0 = AnalogIn(ads, ADS.P0)
 chan1 = AnalogIn(ads, ADS.P1)
 chan2 = AnalogIn(ads, ADS.P2)
 chan3 = AnalogIn(ads, ADS.P3)
-print(chan.value, chan.voltage)
+
+while True:
+	print(chan0.voltage, chan1.voltage, chan2.voltage, chan3.voltage)
