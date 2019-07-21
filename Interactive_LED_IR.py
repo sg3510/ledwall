@@ -59,19 +59,22 @@ def wheel(pos):
 def assign_quad0(brightness):
   for i in range(0,5):
     for j in range(0,3):
-      pixels[i+10*j].setBrightness(brightness)
+      pixels[i+10*j] = [int(k * brightness/255.0) for k in pixels[i+10*j]]
+
 def assign_quad1(brightness):
   for i in range(5,10):
     for j in range(0,3):
-      pixels[i+10*j].setBrightness(brightness)
+      pixels[i+10*j] = [int(k * brightness/255.0) for k in pixels[i+10*j]]
+
 def assign_quad2(brightness):
   for i in range(0,5):
     for j in range(3,6):
-      pixels[i+10*j].setBrightness(brightness)
+      pixels[i+10*j] = [int(k * brightness/255.0) for k in pixels[i+10*j]]
+
 def assign_quad3(brightness):
   for i in range(5,10):
     for j in range(3,6):
-      pixels[i+10*j].setBrightness(brightness)
+      pixels[i+10*j] = [int(k * brightness/255.0) for k in pixels[i+10*j]]
 
 def rainbow_cycle(wait):
     for j in range(255):
