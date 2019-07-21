@@ -77,16 +77,24 @@ def assign_quad3(brightness):
       pixels[i+10*j] = [int(k * brightness/255.0) for k in pixels[i+10*j]]
 
 def rainbow_cycle(wait):
-    for j in range(255):
-        for i in range(num_pixels):
-            pixel_index = (i * 256 // num_pixels) + j
-            pixels[i] = wheel(pixel_index & 255)
-        assign_quad0(min(int(chan0.voltage/3.0*255),255))
-        assign_quad1(min(int(chan1.voltage/3.0*255),255))
-        assign_quad2(min(int(chan2.voltage/3.0*255),255))
-        assign_quad3(min(int(chan3.voltage/3.0*255),255))
-        pixels.show()
-        time.sleep(wait)
+  a = chan0.voltage
+  b = chan1.voltage
+  c = chan2.voltage
+  d = chan3.voltage
+  for j in range(255):
+      for i in range(num_pixels):
+          pixel_index = (i * 256 // num_pixels) + j
+          pixels[i] = wheel(pixel_index & 255)
+      a = a*0.9 + 0.1*chan0.voltage
+      b = b*0.9 + 0.1*chan1.voltage
+      c = c*0.9 + 0.1*chan2.voltage
+      d = d*0.9 + 0.1*chan3.voltage
+      assign_quad0(min(int(a/3.0*255),255))
+      assign_quad1(min(int(b/3.0*255),255))
+      assign_quad2(min(int(c/3.0*255),255))
+      assign_quad3(min(int(d/3.0*255),255))
+      pixels.show()
+      time.sleep(wait)
  
 while True:
     # # Comment this line out if you have RGBW/GRBW NeoPixels
