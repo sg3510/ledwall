@@ -15,11 +15,11 @@ chan3 = AnalogIn(ads, ADS.P3)
 
 while True:
 	a = chan0.voltage
-	sleep(0.01)
+	sleep(0.1)
 	b = chan1.voltage
-	sleep(0.01)
+	sleep(0.1)
 	c = chan2.voltage
-	sleep(0.01)
+	sleep(0.1)
 	d = chan3.voltage
-	sleep(0.01)
+	sleep(0.1)
 	print("{0:2.2} - {0:2.2} - {0:2.2} - {0:2.2}".format(a,b,c,d))
