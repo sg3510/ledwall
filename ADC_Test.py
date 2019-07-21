@@ -15,13 +15,13 @@ chan3 = AnalogIn(ads, ADS.P3)
 
 def read_vals():
 	a = chan0.voltage
-	time.sleep(0.01)
+	sleep(0.01)
 	b = chan1.voltage
-	time.sleep(0.01)
+	sleep(0.01)
 	c = chan2.voltage
-	time.sleep(0.01)
+	sleep(0.01)
 	d = chan3.voltage
-	time.sleep(0.01)
+	sleep(0.01)
 	return a,b,c,d
 
 while True:
