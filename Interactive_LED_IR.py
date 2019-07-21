@@ -57,31 +57,31 @@ def wheel(pos):
 
  
 def assign_quad0(brightness):
-	for i in range(0,5):
-		for j in range(0,3):
-			pixels[i+10*j].setBrightness(brightness)
+  for i in range(0,5):
+    for j in range(0,3):
+      pixels[i+10*j].setBrightness(brightness)
 def assign_quad1(brightness):
-	for i in range(5,10):
-		for j in range(0,3):
-			pixels[i+10*j].setBrightness(brightness)
+  for i in range(5,10):
+    for j in range(0,3):
+      pixels[i+10*j].setBrightness(brightness)
 def assign_quad2(brightness):
-	for i in range(0,5):
-		for j in range(3,6):
-			pixels[i+10*j].setBrightness(brightness)
+  for i in range(0,5):
+    for j in range(3,6):
+      pixels[i+10*j].setBrightness(brightness)
 def assign_quad3(brightness):
-	for i in range(5,10):
-		for j in range(3,6):
-			pixels[i+10*j].setBrightness(brightness)
+  for i in range(5,10):
+    for j in range(3,6):
+      pixels[i+10*j].setBrightness(brightness)
 
 def rainbow_cycle(wait):
     for j in range(255):
         for i in range(num_pixels):
             pixel_index = (i * 256 // num_pixels) + j
             pixels[i] = wheel(pixel_index & 255)
-		assign_quad0(min(int(chan0.voltage/3.0*255),255))
-		assign_quad1(min(int(chan1.voltage/3.0*255),255))
-		assign_quad2(min(int(chan2.voltage/3.0*255),255))
-		assign_quad3(min(int(chan3.voltage/3.0*255),255))
+        assign_quad0(min(int(chan0.voltage/3.0*255),255))
+        assign_quad1(min(int(chan1.voltage/3.0*255),255))
+        assign_quad2(min(int(chan2.voltage/3.0*255),255))
+        assign_quad3(min(int(chan3.voltage/3.0*255),255))
         pixels.show()
         time.sleep(wait)
  
